@@ -4,6 +4,9 @@
 #tp3
 
 import random
+import sys
+
+#toute les variables utiliser toute au long du jeu
 
 niveau_vie = 20
 victoire = 0
@@ -12,9 +15,9 @@ victoire_consecutive = 0
 numero_combat = 0
 Valeurduchoix3 = 0
 ValeurduchoixInitial = 0
-
 vie_boss = random.randint(6,7)
 
+#le menu du jeu
 def menu() :
  print("Que voulez-vous faire ? \n "
                    "1- Combattre cet adversaire \n "
@@ -23,7 +26,7 @@ def menu() :
                    "4- Quitter la partie: "
                      " \n ")
 
-
+#regle du jeu
 def regle() : print("Pour réussir un combat, il faut que la valeur du dé lancé soit supérieure à la force de l’adversaire.\n"
                   "Dans ce cas, le niveau de vie de l’usager est augmenté de la force de l’adversaire. \n"
                   "Une défaite a lieu lorsque la valeur du dé lancé par l’usager est inférieure ou égale à la force de l’adversaire."
@@ -32,8 +35,9 @@ def regle() : print("Pour réussir un combat, il faut que la valeur du dé lanc�
                   "L’usager peut combattre ou éviter chaque adversaire, dans le cas de l’évitement, il y a une pénalité de 1 point de vie. ")
 
 
+#boucle du jeu (avec les combats)
 
-
+#combat boss apres 3 vicoires consecutives
 while niveau_vie > 0 :
   score_dé = random.randint(1, 6)
   score_dé2 = random.randint(1,6)
@@ -94,7 +98,7 @@ while niveau_vie > 0 :
   Valeurduchoix3 = 0
   choix = int(input(menu()))
 
-
+#combat contre monstre normal
 
   if choix == 1 :
          print("Vous avez decider de combatre le monstre.")
@@ -145,7 +149,7 @@ while niveau_vie > 0 :
              print('victoire_consecutive :', victoire_consecutive)
              print("\n")
 
-
+#contourner adversaire
 
   elif choix == 2 :
 
@@ -153,9 +157,13 @@ while niveau_vie > 0 :
       niveau_vie = niveau_vie - 1
       print("Votre vie est maintenant de : ", niveau_vie)
 
+#afficher les regles
+
   elif choix == 3:
          regle()
          Valeurduchoix3 = Valeurduchoix3 + 1
+
+#sortir du programme
 
   else :
          sys.exit()
