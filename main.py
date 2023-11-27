@@ -48,6 +48,7 @@ while niveau_vie > 0 :
       print("Vous avez roulez :", total_dé)
       vie_boss = random.randint(10, 11)
 
+#si egaliter contre boss
 
       if total_dé == vie_boss:
 
@@ -62,6 +63,7 @@ while niveau_vie > 0 :
           print('victoire_consecutive :', victoire_consecutive)
           print("\n")
 
+#si defaite contre le boss
 
       elif total_dé < vie_boss:
 
@@ -76,6 +78,8 @@ while niveau_vie > 0 :
           print('victoire_consecutive :', victoire_consecutive)
           print("\n")
 
+#si victoire contre boss
+
       else:
 
           niveau_vie = niveau_vie + vie_boss
@@ -89,6 +93,7 @@ while niveau_vie > 0 :
           print('victoire_consecutive :', victoire_consecutive)
           print("\n")
 
+#la force du prochain adversaire
 
   if Valeurduchoix3 == 0:
       force_adversaire = random.randint(1, 11)
@@ -104,7 +109,7 @@ while niveau_vie > 0 :
          print("Vous avez decider de combatre le monstre.")
 
          print("Vous avez roulez :", total_dé )
-
+#si egaliter contre monstre normal
          if total_dé == force_adversaire :
 
              niveau_vie = niveau_vie - force_adversaire
@@ -119,7 +124,7 @@ while niveau_vie > 0 :
              print("\n")
 
 
-
+#si defaite contre contre monstre normal
 
          elif total_dé < force_adversaire :
 
@@ -134,7 +139,7 @@ while niveau_vie > 0 :
              print('victoire_consecutive :', victoire_consecutive)
              print("\n")
 
-
+#si victoire contre contre monstre normal
 
          else:
 
